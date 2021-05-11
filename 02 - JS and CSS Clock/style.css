@@ -42,6 +42,19 @@ body {
     /* account for the height of the clock hands */
 }
 
+.clock-face::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    background: #000;;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .hand {
     width: 50%;
     height: 6px;
