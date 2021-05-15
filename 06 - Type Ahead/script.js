@@ -4,9 +4,17 @@ const suggestions = document.querySelector('.suggestions');
 const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 const cities = [];
 
-fetch(endpoint)
-    .then(response => response.json())
-    .then(data => cities.push(...data));
+// // Solution 1
+// fetch(endpoint)
+//     .then(response => response.json())
+//     .then(data => cities.push(...data));
+
+// Solution 2
+async function getData() {
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    cities.push(...data);
+}
 
 function findMatches(wordToMatch, cities) {
     return cities.filter(place => {
@@ -34,6 +42,9 @@ function displayMatches() {
     }).join('');
     suggestions.innerHTML = html;
 }
+
+// Solution 2: On load
+getData();
 
 searchInput.addEventListener('change', displayMatches);
 searchInput.addEventListener('keyup', displayMatches);
