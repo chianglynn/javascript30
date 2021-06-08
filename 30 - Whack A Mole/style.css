@@ -21,6 +21,19 @@ h1 {
   margin-bottom: 0;
 }
 
+.button-container {
+  display:flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px;
+}
+
 .score {
   background: rgba(255,255,255,0.2);
   padding: 0 3rem;
