@@ -24,6 +24,6 @@ const fixNav = entries => {
 const headerObserver = new IntersectionObserver(fixNav, {
     root: null,
     threshold: 0,
-    // rootMargin: `-${navHeight}px`,
+    rootMargin: `-${navHeight}px`,
 });
 headerObserver.observe(header);
