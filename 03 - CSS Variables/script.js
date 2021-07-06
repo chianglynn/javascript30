@@ -1,4 +1,4 @@
-// // Solution 1
+// Solution 1
 // const JsHeading = document.querySelector('.hl');
 // const spacing = document.getElementById('spacing');
 // const blur = document.getElementById('blur');
@@ -7,7 +7,7 @@
 const inputs = document.querySelectorAll('.controls input');
 
 function updateCSSVariables() {
-    // // Solution 1
+    // Solution 1
     // JsHeading.style.color = baseColor.value;
     // img.style.border = `solid ${spacing.value}px ${baseColor.value}`;
     // img.style.filter = `blur(${blur.value}px)`;
@@ -17,7 +17,7 @@ function updateCSSVariables() {
     document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
 }
 
-// // Solution 1
+// Solution 1
 // updateCSSVariables();
 
 inputs.forEach(input => {
