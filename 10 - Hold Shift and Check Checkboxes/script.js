@@ -1,4 +1,4 @@
-// // Solution 1: No need to hold down shift key
+// Solution 1: No need to hold down shift key
 // const inputs = document.querySelectorAll('input');
 // const indexArr = [];
 
@@ -26,12 +26,8 @@ function handleCheck(e) {
   let inBetween = false;
   if (e.shiftKey && this.checked) {
     checkboxes.forEach(checkbox => {
-      if (checkbox === this || checkbox === lastChecked) {
-        inBetween = !inBetween;
-      }
-      if (inBetween) {
-        checkbox.checked = true;
-      }
+      if (checkbox === this || checkbox === lastChecked) inBetween = !inBetween;
+      if (inBetween) checkbox.checked = true;
     });
   }
   lastChecked = this;

@@ -1,6 +1,5 @@
 const canvas = document.getElementById('draw');
 const ctx = canvas.getContext('2d');
-
 let isDrawing = false;
 let lastX = 0;
 let lastY = 0;
@@ -29,6 +28,5 @@ canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     [lastX, lastY] = [e.offsetX, e.offsetY];
 });
-canvas.addEventListener('mouseup', () => isDrawing = false);
-canvas.addEventListener('mouseout', () => isDrawing = false);
+['mouseup', 'mouseout'].forEach(el => canvas.addEventListener(el, () => isDrawing = false));
 canvas.addEventListener('mousemove', draw);
