@@ -35,14 +35,11 @@ function scrub(e) {
     video.currentTime = scrubTime;
 }
 
-video.addEventListener('click', togglePlay);
-video.addEventListener('play', updateButton);
-video.addEventListener('pause', updateButton);
+[video, toggle].forEach(sl => sl.addEventListener('click', togglePlay));
+['play', 'pause'].forEach(el => video.addEventListener(el, updateButton));
 video.addEventListener('timeupdate', handleProgress);
-toggle.addEventListener('click', togglePlay);
 skipButtons.forEach(button => button.addEventListener('click', skip));
-ranges.forEach(range => range.addEventListener('mousemove', handleRangeUpdate));
-ranges.forEach(range => range.addEventListener('change', handleRangeUpdate));
+ranges.forEach(range => ['mousemove', 'change'].forEach(el => range.addEventListener(el, handleRangeUpdate)));
 progress.addEventListener('click', scrub);
 progress.addEventListener('mousedown', () => mousedown = true);
 progress.addEventListener('mouseup', () => mousedown = false);
