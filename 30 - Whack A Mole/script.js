@@ -15,7 +15,6 @@ function randomHole(holes) {
     const hole = holes[index];
 
     if (hole === lastHole) return randomHole(holes);
-
     lastHole = hole;
     return hole;
 }
@@ -26,7 +25,7 @@ function popup() {
     hole.classList.add('up');
     setTimeout(() => {
         hole.classList.remove('up');
-        if (!timeup) popup()
+        if (!timeup) popup();
     }, time);
 }
 
